@@ -10,12 +10,24 @@ body{
 
 .active-box{
   width: 280px;
-  height: 230px;
+  height: 200px;
 }
 
 .timer-box{
   width: 300px;
   height: 125px;
+}
+
+.map-box{
+  width: 380px;
+  height: 300px;
+  position: relative;
+}
+
+.player{
+  position: absolute;
+  width: 10px;
+  height: 10px;
 }
 
 .bg-blue-team{
