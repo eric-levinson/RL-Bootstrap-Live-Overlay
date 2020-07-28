@@ -10,18 +10,20 @@
 
     function orangeResetAll() {
 
-      $("div[id^='orange-player-']").text('')
+      //$("div[id^='orange-player-']").text('')
       $('#orange-team-name').text('')
-      $("div[id^='orange-player-']").addClass('d-none')
+      $("#orange-player-1, #orange-player-2, #orange-player-1").addClass('d-none')
       $('#orange-player-1-p-bar, #orange-player-2-p-bar, #orange-player-3-p-bar').width('0%')
     }
 
     function blueResetAll() {
-      $("div[id^='blue-player-']").text('')
+      //$("div[id^='blue-player-']").text('')
       $('#blue-team-name').text('')
-      $("div[id^='blue-player-']").addClass('d-none')
+      $("#blue-player-1, #blue-player-2, #blue-player-1").addClass('d-none')
+      
       $('#blue-player-1-p-bar, #blue-player-2-p-bar, #blue-player-3-p-bar').width('0%')
     }
+
 
     function xMath(x) {
       var xCoord = (190 / x)
@@ -319,7 +321,7 @@
               $('#blue-player-2-boost').text(blue2.boost)
               $('#blue-player-2-p-bar').width(blue2.boost + "%")
 
-              /*$('#blue-player-3').addClass('d-none');
+             /* $('#blue-player-3').addClass('d-none');
               $("div[id^='blue-player-3']").text('')
               $('#blue-player-3-p-bar').width('0%')*/
 
@@ -334,13 +336,13 @@
               $('#blue-player-1-boost').text(blue1.boost)
               $('#blue-player-1-p-bar').width(blue1.boost + "%")
 
-             /* $('#blue-player-2').addClass('d-none');
+              /*$('#blue-player-2').addClass('d-none');
               $("div[id^='blue-player-2']").text('')
               $('#blue-player-2-p-bar').width('0%')
 
               $('#blue-player-3').addClass('d-none');
               $("div[id^='blue-player-3']").text('')
-              $('#blue-player-3-p-bar').width('0%') */
+              $('#blue-player-3-p-bar').width('0%')*/
 
             }
 
@@ -450,5 +452,7 @@
       else if (jEvent.event == "game:podium_start" || jEvent.event == "game:match_ended") {
         console.log('match ended / podium')
         $('#main-ui').addClass('invisible');
+        blueResetAll()
+        orangeResetAll()
       }
     }
